@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+
+import argparse
+import tempfile
+import py7zr
+
+with tempfile.TemporaryDirectory() as tmpdirname:
+    print('created temporary directory', tmpdirname)
+
+    with py7zr.SevenZipFile("Archive.7z", 'w') as archive:
+        pass
+
+
