@@ -1,4 +1,4 @@
-name: Documentation
+name: Example_Wiki_Step
 
 on: [push]
 
@@ -8,10 +8,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      # Additional steps to generate documentation in "Documentation" directory
-      - name: Upload Documentation to Wiki
-        uses: SwiftDocOrg/github-wiki-publish-action@v1
-        with:
-          path: "docs"
+      - name: Publish to Wiki on GitHub
+        uses: ProdIsMyDev/Publish-To-Wiki@1
         env:
           GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
