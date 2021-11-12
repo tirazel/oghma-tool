@@ -1,11 +1,11 @@
 on:
     push:
         branches:
-            - master
+            - main
     pull_request:
         branches:
-            - master
-name: Wiki Sync X
+            - main
+name: Wiki Sync
 jobs:
     update-wiki:
         runs-on: ubuntu-latest
