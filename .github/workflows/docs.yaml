@@ -12,11 +12,8 @@ jobs:
         steps:
           - uses: actions/checkout@master
           - name: Sync Wiki
-            uses: joeizzard/action-wiki-sync@master
+            uses: cmbrose/github-docs-to-wiki@master
             with:
-                username: example
-                access_token: ${{ secrets.GITHUB_TOKEN }}
+                githubToken: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
                 wiki_folder: wiki
-                commit_username: 'Example Name'
-                commit_email: 'example@users.noreply.github.com'
-                commit_message: 'action: wiki sync'
+                rootDocsFolder: wiki
