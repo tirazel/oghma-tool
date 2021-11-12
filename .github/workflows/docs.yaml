@@ -1,14 +1,22 @@
-name: Example_Wiki_Step
-
-on: [push]
-
+on:
+    push:
+        branches:
+            - master
+    pull_request:
+        branches:
+            - master
+name: Wiki Sync
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v1
-      - name: Publish to Wiki on GitHub
-        uses: ProdIsMyDev/Publish-To-Wiki@1
-        env:
-          GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+    update-wiki:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@master
+          - name: Sync Wiki
+            uses: joeizzard/action-wiki-sync@master
+            with:
+                username: example
+                access_token: ${{ secrets.GITHUB_TOKEN }}
+                wiki_folder: wiki
+                commit_username: 'Example Name'
+                commit_email: 'example@users.noreply.github.com'
+                commit_message: 'action: wiki sync'
