@@ -15,5 +15,5 @@ jobs:
             uses: cmbrose/github-docs-to-wiki@master
             with:
                 githubToken: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-                rootDocsFolder: wiki
+                rootDocsFolder: docs
                 useHeaderForWikiName: true
